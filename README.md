@@ -1,3 +1,4 @@
 # XIXauthors
 ## Collaborators
-Paula Ferreira
+Paula Ferreira <https://github.com/paulakaferreira>
+
