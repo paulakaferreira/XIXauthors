@@ -1,3 +1,3 @@
 # XIXauthors
-## COllaborators
+## Collaborators
 Paula Ferreira
