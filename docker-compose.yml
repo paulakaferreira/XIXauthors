@@ -1,0 +1,11 @@
+version: "3.10"
+services:
+  config:
+    build: .
+    image: xixi_image:xix_authors # O primeiro parâmetro é o nome do container, o segundo é a tag dele.
+    container_name: xixi_container # Nome do container
+    volumes: 
+      - .:/docker_dir 
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000
