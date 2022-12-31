@@ -1,0 +1,14 @@
+Arquivo com explicações em português:
+
+O Dockerfile contém as definições de ambiente do container;
+- https://docs.docker.com/engine/reference/builder/
+
+O docker-compose contém os diversos serviços que podem ser gerados de forma independente;
+
+Para criar e iniciar o docker-compose digite: 'docker-compose up'
+- Ou 'docker-compose up -d' para iniciar o docker no background. 
+-- No caso acima, use 'docker-compose ps' para visualizar a aplicação.
+Para desinstalar o container digite: 'docker-compose down'
+
+REDIS: Arthur explica.
+ - Tem a ver com a obtenção de consultas mais rápidas através de cache.

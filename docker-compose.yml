@@ -1,9 +1,14 @@
-version: "3.10"
+# version: "3.10" -- 'version' is an optional parameter!
 services:
+  # Redis
+  redis:
+    image: redis:alpine
+    container_name: redis
+
+  # Django App  
   config:
     build: .
-    image: xixi_image:xix_authors # O primeiro parâmetro é o nome do container, o segundo é a tag dele.
-    container_name: xixi_container # Nome do container
+    container_name: xixi_container
     volumes: 
       - .:/docker_dir 
     ports:
