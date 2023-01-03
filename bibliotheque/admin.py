@@ -6,4 +6,6 @@ from . import models
 class AuteurAdmin(admin.ModelAdmin): ...
 
 @admin.register(models.Livre)
-class LivreAdmin(admin.ModelAdmin): ...
+class LivreAdmin(admin.ModelAdmin):
+    list_display= ['id', 'titre',]
+    search_fields=['titre', 'auteur__nom', 'auteur__prenom']

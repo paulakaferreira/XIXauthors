@@ -9,4 +9,5 @@ class Auteur(models.Model):
 
 class Livre(models.Model):
     titre = models.CharField(null = False, blank = False, max_length = 200)
-    auteur = models.ForeignKey(Auteur, null = True, blank = True, on_delete=models.SET_NULL)
+    auteur = models.ManyToManyField(Auteur, blank = True)
+
