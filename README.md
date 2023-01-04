@@ -1,9 +1,3 @@
-<style>
-r { color: Red }
-o { color: Orange }
-g { color: Green }
-</style>
-
 # French Authors from the 19th century
 
 ## Installation
@@ -31,7 +25,7 @@ Check if it works by accessing `localhost:8000` in your browser.
 Welcome to the Django!
 
 
-<r>**PS: if you want to go straight to django-admin, try `localhost:8000/admin` instead.**<r>
+**⚠️PS: if you want to go straight to django-admin, try `localhost:8000/admin` instead.⚠️**
 
 
 ## Collaborators
