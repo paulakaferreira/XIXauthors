@@ -1,6 +1,15 @@
+<p align="center">
+<a href="https://github.com/paulakaferreira/XIXauthors/actions/workflows/black.yml"><img src="https://github.com/paulakaferreira/XIXauthors/actions/workflows/black.yml/badge.svg"></a>
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
+
 # French Authors from the 19th century
 
 ## Installation
+
+Install graphviz:
+
+`sudo apt install graphviz`
 
 Install all python dependencies:
 
@@ -26,6 +35,16 @@ Welcome to the Django!
 
 
 **⚠️PS: if you want to go straight to django-admin, try `localhost:8000/admin` instead.⚠️**
+
+## Create an EDR graph
+
+For a png file run:
+
+`python manage.py graph_models bibliotheque -o edr.png`
+
+For a svg file run:
+
+`python manage.py graph_models bibliotheque -o edr.svg`
 
 
 ## Collaborators
