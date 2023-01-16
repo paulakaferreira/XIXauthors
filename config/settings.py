@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
 THIRD_PARTY_APPS = [
     "jazzmin",
+    "django_extensions",
 ]
 
 MY_APPS = [
