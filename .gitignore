@@ -2,3 +2,5 @@
 *.pyc
 *.csv
 *.ipynb
+*.svg
+*.png
