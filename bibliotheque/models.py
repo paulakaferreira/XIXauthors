@@ -6,7 +6,7 @@ class Auteur(models.Model):
     prenom = models.CharField(null=False, blank=False, max_length=100)
 
     def __str__(self) -> str:
-        return self.nom.upper() + ", " + self.prenom
+        return self.nom.upper() + ", " + self.prenom.title()
 
 
 class Livre(models.Model):
