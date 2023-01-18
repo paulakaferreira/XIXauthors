@@ -9,8 +9,8 @@ services:
   config:
     build: .
     container_name: xixi_container
-    volumes: 
-      - .:/docker_dir 
+    volumes:
+      - .:/docker_dir
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
