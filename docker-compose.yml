@@ -4,7 +4,7 @@ services:
   # Django App  
   config:
     build: .
-    container_name: xixi_container
+    container_name: xix_container
     volumes: 
       - .:/docker_dir 
     ports:
