@@ -6,3 +6,5 @@ celery==5.2.7
 pydot==1.4.2
 pyparsing==3.0.9
 django-debug-toolbar==3.8.1
+pylint==2.15.10
+
