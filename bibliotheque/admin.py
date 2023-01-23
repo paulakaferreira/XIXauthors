@@ -14,3 +14,8 @@ class LivreAdmin(admin.ModelAdmin):
         "titre",
     ]
     search_fields = ["titre", "auteur__nom", "auteur__prenom"]
+
+
+@admin.register(models.Personne)
+class PersonneAdmin(admin.ModelAdmin):
+    ...
