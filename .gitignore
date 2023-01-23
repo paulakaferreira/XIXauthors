@@ -2,3 +2,7 @@
 *.pyc
 *.svg
 *.png
+
+#Notebooks
+*.ipynb
+.ipynb_checkpoints/*
