@@ -16,4 +16,4 @@ class AuteurTestCase(TestCase):
     def test_string_representation_clarice(self):
         "String representation complies to `NOM, Prenom` format."
         clarice = models.Auteur.objects.get(nom="lispector", prenom="clarice")
-        self.assertEqual(str(clarice), "FALCAO, Clarice")
+        self.assertEqual(str(clarice), "LISPECTOR, Clarice")
