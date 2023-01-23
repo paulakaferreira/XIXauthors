@@ -1,5 +1,7 @@
 *.sqlite3
 *.pyc
+*.csv
+*.ipynb
 *.svg
 *.png
 

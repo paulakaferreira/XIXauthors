@@ -15,21 +15,33 @@ Install all python dependencies:
 
 `pip install -r requirements.txt`
 
+## Docker Setup (for local development)  
+
+1) Check if Docker Desktop is running  
+
+2) Run `docker compose up --build --detach --remove-orphans` to initialize the docker container (if you're using old docker, you might need to use `docker-compose` with an hyphen)
+
+3) Navigate to `http://localhost:8000` to check if everything is running smoothly  
+
+4) Use the command `docker exec -it django sh` to open the command prompt inside the container you've just created!
+
 ## Django Setup (for local development)
 
-Run `migrate` to populate local database with required tables:
+*Inside the docker container:*
+
+1) Run `migrate` to populate local database with required tables:
 
 `python manage.py migrate`
 
-Create your `superuser`:
+2) Create your `superuser`:
 
 `python manage.py createsuperuser`
 
-Start Django debug server:
+3) Start Django debug server:
 
 `python manage.py runserver`
 
-Check if it works by accessing `localhost:8000` in your browser.
+4) Check if it works by accessing `localhost:8000` in your browser.
 
 Welcome to the Django!
 
@@ -46,9 +58,12 @@ For a svg file run:
 
 `python manage.py graph_models bibliotheque -o edr.svg`
 
-
 ## Collaborators
 * **[Paula Ferreira](https://github.com/paulakaferreira)** 
 * **[Tiago Lima](https://github.com/til021)**
 * **[Arthur Alves](https://github.com/sprezz-arthur)**
 * **[Amélia Galvão](https://github.com/ameliagalvao)**
+
+## Database Available At:
+
+* **[Project Gutenberg](https://www.gutenberg.org/cache/epub/feeds/)**

@@ -1,16 +1,11 @@
 # version: "3.10" -- 'version' is an optional parameter!
 services:
-  # Redis
-  redis:
-    image: redis:alpine
-    container_name: redis
 
-  # Django App  
-  config:
+  django:
     build: .
-    container_name: xixi_container
+    container_name: django
     volumes:
-      - .:/docker_dir
+      - .:/home/django_app
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
