@@ -4,3 +4,7 @@
 *.ipynb
 *.svg
 *.png
+
+#Notebooks
+*.ipynb
+.ipynb_checkpoints/*
