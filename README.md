@@ -19,11 +19,11 @@ Install all python dependencies:
 
 1) Check if Docker Desktop is running  
 
-2) Run `docker-compose up` to initialize the docker container  
+2) Run `docker compose up --build --detach --remove-orphans` to initialize the docker container (if you're using old docker, you might need to use `docker-compose` with an hyphen)
 
 3) Navigate to `http://localhost:8000` to check if everything is running smoothly  
 
-4) Use the command `docker exec -it xixi_container sh` to open the command prompt inside the container you've just created!
+4) Use the command `docker exec -it django sh` to open the command prompt inside the container you've just created!
 
 ## Django Setup (for local development)
 

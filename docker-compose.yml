@@ -1,12 +1,11 @@
 # version: "3.10" -- 'version' is an optional parameter!
 services:
 
-  # Django App  
-  config:
+  django:
     build: .
-    container_name: xix_container
-    volumes: 
-      - .:/docker_dir 
+    container_name: django
+    volumes:
+      - .:/home/django_app
     ports:
       - 8000:8000
     command: python manage.py runserver 0.0.0.0:8000
