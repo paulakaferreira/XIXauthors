@@ -19,3 +19,13 @@ class LivreAdmin(admin.ModelAdmin):
 @admin.register(models.Personne)
 class PersonneAdmin(admin.ModelAdmin):
     ...
+
+
+@admin.register(models.FaitHistorique)
+class FaitHistoriqueAdmin(admin.ModelAdmin):
+    ...
+
+
+@admin.register(models.Courant)
+class CourantAdmin(admin.ModelAdmin):
+    ...
