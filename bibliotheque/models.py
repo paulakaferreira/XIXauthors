@@ -25,6 +25,9 @@ class Personne(models.Model):
     amis = models.ManyToManyField(
         "self", blank=True
     )
+    secondaire = models.ManyToManyField(
+        "self", blank=True
+    )
 
 
 class FaitMarquant(models.Model):
