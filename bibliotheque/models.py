@@ -12,21 +12,25 @@ class Personne(models.Model):
     prenom = models.CharField(null=False, blank=False, max_length=100)
     genre = models.CharField(choices=GENRE_CHOICES,
         null=True, blank=True, max_length=1)
+    mere = models.ForeignKey(
+        "self", related_name="enfants_mere", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    pere = models.ForeignKey(
+        "self", related_name="enfants_pere", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    conjoint = models.OneToOneField(
+        "self", related_name="conjoint_rn", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    amis = models.ManyToManyField(
+        "self", related_name="conjoint_rn", null=True, blank=True
+    )
 
 
 class Auteur(Personne):
     date_naissance = models.DateField(null=True)
     date_mort = models.DateField(null=True)
     lieu_naissance = models.CharField(null=False, blank=False, max_length=200)
-    conjoint = models.ForeignKey(
-        Personne, related_name="conjoint_rn", null=True, blank=True, on_delete=models.SET_NULL
-    )
-    mere = models.ForeignKey(
-        Personne, related_name="enfant_mere", null=True, blank=True, on_delete=models.SET_NULL
-    )
-    pere = models.ForeignKey(
-        Personne, related_name="enfant_pere", null=True, blank=True, on_delete=models.SET_NULL
-    )
+  
     def __str__(self) -> str:
         return self.nom.upper() + ", " + self.prenom.title()
 
@@ -42,7 +46,7 @@ class FaitHistorique(models.Model):
 
 
 class Courant(models.Model):
-    titre = models.CharField(null=False, blank=False, max_length=200)
+    nom = models.CharField(null=False, blank=False, max_length=200)
     caracteristiques = models.TextField(null=True, blank=True)
 
 
@@ -50,3 +54,12 @@ class Livre(models.Model):
     titre = models.CharField(null=False, blank=False, max_length=200)
     auteur = models.ManyToManyField(Auteur, blank=True)
     courant = models.ManyToManyField(Courant, blank=True)
+
+class Edition(models.Model):
+    livre = models.ForeignKey(Livre, null=True, blank=True, on_delete=models.SET_NULL)
+    annee = models.DateField(null=True)
+    langue = models.CharField(null=False, blank=False, max_length=200)
+    ville = models.CharField(null=False, blank=False, max_length=200)
+    pays = models.CharField(null=False, blank=False, max_length=200)
+    editeur = models.CharField(null=False, blank=False, max_length=200)
+    imprimerie = models.CharField(null=False, blank=False, max_length=200)
