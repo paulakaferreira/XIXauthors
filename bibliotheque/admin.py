@@ -21,11 +21,20 @@ class PersonneAdmin(admin.ModelAdmin):
     ...
 
 
-@admin.register(models.FaitHistorique)
-class FaitHistoriqueAdmin(admin.ModelAdmin):
+@admin.register(models.FaitSocial)
+class FaitSocialAdmin(admin.ModelAdmin):
     ...
 
 
+
+@admin.register(models.FaitMarquant)
+class FaitMarquantAdmin(admin.ModelAdmin):
+    ...
+
 @admin.register(models.Courant)
 class CourantAdmin(admin.ModelAdmin):
+    ...
+
+@admin.register(models.Genre)
+class GenreAdmin(admin.ModelAdmin):
     ...

@@ -23,27 +23,35 @@ class Personne(models.Model):
         "self", related_name="conjoint_rn", null=True, blank=True, on_delete=models.SET_NULL
     )
     amis = models.ManyToManyField(
-        "self", related_name="ami_rn", null=True, blank=True
+        "self", blank=True
     )
 
+
+class FaitMarquant(models.Model):
+    description = models.TextField(null=False, blank=False)
+    date_debut = models.DateField(null=True)
+    date_fin = models.DateField(null=True)
+
+    class Meta:
+        verbose_name_plural = "Faits Marquants"
 
 class Auteur(Personne):
     date_naissance = models.DateField(null=True)
     date_mort = models.DateField(null=True)
     lieu_naissance = models.CharField(null=False, blank=False, max_length=200)
+    faitmarquant = models.ManyToManyField(FaitMarquant, blank=True)
   
     def __str__(self) -> str:
         return self.nom.upper() + ", " + self.prenom.title()
 
-
-class FaitHistorique(models.Model):
+class FaitSocial(models.Model):
     description = models.TextField(null=False, blank=False)
     date_debut = models.DateField(null=True)
     date_fin = models.DateField(null=True)
     auteur = models.ManyToManyField(Auteur, blank=True)
 
     class Meta:
-        verbose_name_plural = "Faits Historiques"
+        verbose_name_plural = "Faits Sociaux"
 
 
 class Courant(models.Model):
