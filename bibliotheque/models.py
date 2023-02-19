@@ -5,7 +5,8 @@ class Personne(models.Model):
 
     GENRE_CHOICES = [
         ("F", "Féminin"),
-        ("M", "Masculin")
+        ("M", "Masculin"),
+        ("A", "Autre")
     ]
 
     nom = models.CharField(null=False, blank=False, max_length=200)
@@ -22,7 +23,7 @@ class Personne(models.Model):
         "self", related_name="conjoint_rn", null=True, blank=True, on_delete=models.SET_NULL
     )
     amis = models.ManyToManyField(
-        "self", related_name="conjoint_rn", null=True, blank=True
+        "self", related_name="ami_rn", null=True, blank=True
     )
 
 
@@ -49,11 +50,16 @@ class Courant(models.Model):
     nom = models.CharField(null=False, blank=False, max_length=200)
     caracteristiques = models.TextField(null=True, blank=True)
 
+class Genre(models.Model):
+    nom = models.CharField(null=False, blank=False, max_length=200)
+    caracteristiques = models.TextField(null=True, blank=True)
+
 
 class Livre(models.Model):
     titre = models.CharField(null=False, blank=False, max_length=200)
     auteur = models.ManyToManyField(Auteur, blank=True)
     courant = models.ManyToManyField(Courant, blank=True)
+    genre = models.ManyToManyField(Genre, blank=True)
 
 class Edition(models.Model):
     livre = models.ForeignKey(Livre, null=True, blank=True, on_delete=models.SET_NULL)
