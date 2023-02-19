@@ -19,8 +19,8 @@ class Personne(models.Model):
     pere = models.ForeignKey(
         "self", related_name="enfants_pere", null=True, blank=True, on_delete=models.SET_NULL
     )
-    conjoint = models.OneToOneField(
-        "self", related_name="conjoint_rn", null=True, blank=True, on_delete=models.SET_NULL
+    conjoint = models.ManyToManyField(
+        "self", through = "RelationConjoint", symmetrical=True
     )
     amis = models.ManyToManyField(
         "self", blank=True
@@ -80,3 +80,13 @@ class Edition(models.Model):
     pays = models.CharField(null=False, blank=False, max_length=200)
     editeur = models.CharField(null=False, blank=False, max_length=200)
     imprimerie = models.CharField(null=False, blank=False, max_length=200)
+
+class RelationConjoint(models.Model):
+    c1 = models.ForeignKey(
+        Personne, related_name="conjoint1_rn", on_delete=models.CASCADE
+    )
+    c2 = models.ForeignKey(
+            Personne, related_name="conjoint2_rn", on_delete=models.CASCADE
+    )
+    date_debut = models.DateField()
+    date_fin = models.DateField()
