@@ -9,7 +9,7 @@
 
 Install graphviz:
 
-`sudo apt install graphviz`
+`sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
 
 Install all python dependencies:
 
